@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <title>Useful Conversions</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Convert Units" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      
+      <div class="row" style="padding-bottom:20px">
+        <div class="col-12 text-center">
+          <h2>Useful Conversions</h2>
+        </div>
+      </div>
+      
+      <div class="row border border-info rounded" style="padding:5px">
+        <div class="col-12">
+          <h5>Kilometres and Miles</h5>
+        </div>
+        <div class="col-3">
+          <div class="input-group">
+            <input id="km2miles-km" class="form-control form-control-sm" type="text" placeholder="Kilometres" style="height:auto;"/>
+            <div class="input-group-append">
+              <span class="input-group-text">Km</span>
+            </div>   
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="input-group">
+            <input id="km2miles-miles" class="form-control form-control-sm" type="text" placeholder="Miles"  style="height:auto;"/>
+            <div class="input-group-append">
+              <span class="input-group-text">Miles</span>
+            </div>   
+          </div>
+        </div>
+        <div class="col-6 my-auto">
+          One km is equal to 0.621371 miles. One mile is equal to 1.60934 kilometres.
+        </div>
+      </div>
+      <div class="row" style="padding-top:20px;"></div>
+      
+      
+      <div class="row border border-info rounded" style="padding:5px">
+        <div class="col-12">
+          <h5>Kilometres and Nautical Miles</h5>
+        </div>
+        <div class="col-3">
+          <div class="input-group">
+            <input id="km2nm-km" class="form-control form-control-sm" type="text" placeholder="Kilometres" style="height:auto;"/>
+            <div class="input-group-append">
+              <span class="input-group-text">Km</span>
+            </div>   
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="input-group">
+            <input id="km2nm-nm" class="form-control form-control-sm" type="text" placeholder="Nautical Miles"  style="height:auto;"/>
+            <div class="input-group-append">
+              <span class="input-group-text">NM</span>
+            </div>   
+          </div>
+        </div>
+        <div class="col-6 my-auto">
+          One km is equal to 0.539957 nautical miles. One nautical mile is equal to 1.852 kilometres.
+        </div>
+      </div>
+      <div class="row" style="padding-top:20px;"></div>
+      
+      
+      <div class="row border border-info rounded" style="padding:5px">
+        <div class="col-12">
+          <h5>Miles and Nautical Miles</h5>
+        </div>
+        <div class="col-3">
+          <div class="input-group">
+            <input id="miles2nm-miles" class="form-control form-control-sm" type="text" placeholder="Miles" style="height:auto;"/>
+            <div class="input-group-append">
+              <span class="input-group-text">Miles</span>
+            </div>   
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="input-group">
+            <input id="miles2nm-nm" class="form-control form-control-sm" type="text" placeholder="Nautical Miles"  style="height:auto;"/>
+            <div class="input-group-append">
+              <span class="input-group-text">NM</span>
+            </div>   
+          </div>
+        </div>
+        <div class="col-6 my-auto">
+          One mile is equal to 0.868976 nautical miles. One nautical mile is equal to 1.15078 miles.
+        </div>
+      </div>
+      <div class="row" style="padding-top:20px;"></div>
+      
+      
+    </div>
+  </body>
+
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script>
+    
+    // Constants
+    const KM_IN_MILES = 0.621371;
+    const KM_IN_NM = 0.539957;
+    const MILES_IN_NM = 0.868976;
+    
+    
+    // Km to miles
+    $('#km2miles-km').on('keyup', function(e) {
+      const res = parseFloat($(this).val()) * KM_IN_MILES;
+      $('#km2miles-miles').val(res);
+    });
+    $('#km2miles-miles').on('keyup', function(e) {
+      const res = parseFloat($(this).val()) / KM_IN_MILES;
+      $('#km2miles-km').val(res);
+    });
+    
+    // Km to nautical miles
+    $('#km2nm-km').on('keyup', function(e) {
+      const res = parseFloat($(this).val()) * KM_IN_NM;
+      $('#km2nm-nm').val(res);
+    });
+    $('#km2nm-nm').on('keyup', function(e) {
+      const res = parseFloat($(this).val()) / KM_IN_NM;
+      $('#km2nm-km').val(res);
+    });
+    
+    // Miles to nautical miles
+    $('#miles2nm-miles').on('keyup', function(e) {
+      const res = parseFloat($(this).val()) * MILES_IN_NM;
+      $('#miles2nm-nm').val(res);
+    });
+    $('#miles2nm-nm').on('keyup', function(e) {
+      const res = parseFloat($(this).val()) / MILES_IN_NM;
+      $('#miles2nm-miles').val(res);
+    });
+    
+
+  </script>
+</html>
